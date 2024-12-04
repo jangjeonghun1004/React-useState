@@ -3,6 +3,9 @@ import './App.css';
 import Button from './Button';
 import ToDo from './ToDo';
 import Profile from './Profile';
+import TempInput from './TempInput';
+import UnitSelector from './UnitSelector';
+import Form from './Form';
 
 function App() {
   const users = ['james', 'tom', 'jeonghun'];
@@ -18,16 +21,42 @@ function App() {
   };
 
   console.log('app rendered.');
+
+  const [temperature, setTemperature] = useState('');
+  const [unit, setUnit] = useState('Celsius');
+  const convertedTemp = unit === 'Celsius' ? (temperature * 9/5 + 32).toFixed(1) : ((temperature - 32) * 5/9).toFixed(1);
  
   return (
     <>
-      <h2>User Profile</h2>
+
+      <Form />
+
+
+
+
+
+      {/* <h2>Temperature Convert</h2>
+      <p>
+        Converted: {temperature ? convertedTemp : '--'}
+        {unit === 'Celsius' ? 'F' : 'C'}
+      </p>
+
+      <TempInput value={temperature} unit={unit} onChange={setTemperature} />
+      <UnitSelector unit={unit} onUnitChange={setUnit} /> */}
+
+
+
+
+      {/* <h2>User Profile</h2>
       <button onClick={changeToggleStatus}>Toggle Status</button>
       <button onClick={changeUser}>Switch User</button>
 
       <p>{status ? 'active' : 'inactive'}</p>
 
-      <Profile name={user} />
+      <Profile name={user} /> */}
+
+
+
 
 
       {/* <Button />
